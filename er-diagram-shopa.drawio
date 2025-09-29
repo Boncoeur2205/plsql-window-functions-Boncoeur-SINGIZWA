@@ -1,0 +1,40 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Page-1" id="kSXCSem-l6n6rqIqyo6C">
+    <mxGraphModel dx="786" dy="516" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CBkSkwOBBTqkzccBKJ1L-1" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;customer_id (PK)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;name&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;region&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="120" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="CBkSkwOBBTqkzccBKJ1L-2" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;transaction_id (PK)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;customer_id (FK)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;product_id (FK)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;sale_date&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;amount&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="120" width="160" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="CBkSkwOBBTqkzccBKJ1L-3" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;product_id (PK)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;name&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;category&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="120" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="CBkSkwOBBTqkzccBKJ1L-7" value="&lt;b&gt;TRANSACTIONS&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="60" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CBkSkwOBBTqkzccBKJ1L-8" value="&lt;div&gt;&lt;b&gt;CUSTOMERS&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="60" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CBkSkwOBBTqkzccBKJ1L-9" value="&lt;b&gt;PRODUCTS&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="60" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CBkSkwOBBTqkzccBKJ1L-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.377;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#6a00ff;strokeColor=#3700CC;" edge="1" parent="1" source="CBkSkwOBBTqkzccBKJ1L-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="240" as="sourcePoint" />
+            <mxPoint x="250" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CBkSkwOBBTqkzccBKJ1L-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#6a00ff;strokeColor=#3700CC;" edge="1" parent="1" source="CBkSkwOBBTqkzccBKJ1L-2" target="CBkSkwOBBTqkzccBKJ1L-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="250" as="sourcePoint" />
+            <mxPoint x="560" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
