@@ -4,18 +4,20 @@
 PL/SQL Window Functions Project – Shopa
 
 Course: INSY 8311 – Database Development with PL/SQL
+
 Instructor: Eric MANIRAGUHA
+
 Student: Boncoeur SINGIZWA
  
 
-Business Context
+**Business Context**
 
 Business Name: Shopa
 
 Shopa is an emerging e-commerce marketplace that will enable the relationship between independent sellers and customers in different parts of Africa. Shopa takes care of the logistics, customer support, and payment processing, and customers are able to buy a great variety of merchandise, including electronics, fashion, and home goods.
 
 
-Data Challenge
+**Data Challenge**
 
 Although Shopa has comprehensive sales and customer data,
 the analytics team does not have insights into which products and sellers do well in each area,
@@ -23,7 +25,7 @@ how customer purchases evolve every month,
 and how they can cluster customers based on spending behaviour.
 
 
-Expected Outcome
+**Expected Outcome**
 
 The objective is to use the sales data of Shopa to:
 
@@ -33,7 +35,7 @@ The objective is to use the sales data of Shopa to:
 ⦁	Assist the strategic decision-making of marketing, logistics, and seller management.
 
 
-Success Criteria
+**Success Criteria**
 
 
 1.	Best 5 Products in each region in a quarter.
@@ -62,12 +64,14 @@ Formula: AVG(amount) OVER(ROWS between 2 PRECEDING and CURRENT row)
 Use Case: Flatten the peaks and niches and show the sales pattern of each product.
 
 
-Database Schema
+**Database Schema**
 
 1.	customers
 
 customer_id-INT (Primary Key)
+
 name-VARCHAR
+
 region-VARCHAR
 
 
@@ -86,7 +90,9 @@ INSERT INTO customers (customer_id, name, region) VALUES
 2. products
 
 product_id-INT (Primary Key)
+
 name-VARCHAR
+
 category-VARCHAR
 
 CREATE TABLE products (product_id INT PRIMARY KEY, name VARCHAR(100), category VARCHAR(50));
@@ -103,9 +109,13 @@ INSERT INTO products (product_id, name, category) VALUES
 3. transactions
 
 transaction_id-INT (Primary Key)
+
 customer_id-INT (Foreign Key)
+
 product_id-INT (Foreign Key)
+
 sale_date-DATE
+
 amount-NUMERIC
 
 CREATE TABLE transactions (transaction_id INT PRIMARY KEY, customer_id INT REFERENCES customers(customer_id), product_id INT REFERENCES products(product_id), sale_date DATE, amount NUMERIC(12, 2));
@@ -127,14 +137,14 @@ INSERT INTO transactions (transaction_id, customer_id, product_id, sale_date, am
 
 
 
-Relationships
+**Relationships**
 
 transactions.customer_id → customers.customer_id
 transactions.product_id → products.product_id
 <img width="631" height="291" alt="er-diagram-shopa" src="https://github.com/user-attachments/assets/94e62212-e1da-41a3-bf07-f861277bde94" />
 
 
-SQL Window Functions
+**SQL Window Functions**
 
 
 1.RANKING_QUERY
@@ -198,7 +208,7 @@ order by product_id, sale_date;
 
 Interpretation: This query averages the short-term variation in sales by finding an average of the movement of sales of every product over the past three transactions. It assists in determining the long term sales trends and may be applied to determine the momentum of newly introduced or advertised products. Sudden shifts of moving averages can be due to seasonality or influence of marketing campaigns.
 
-Results Analysis
+**Results Analysis**
 
 1.	Descriptive: What happened?
 ⦁	Product sales peaked in Q2, especially for electronics.
@@ -213,7 +223,7 @@ Results Analysis
 ⦁	Consider launching loyalty incentives for consistent high spenders in Kigali.
 
 
-References
+**References**
 
 1. Oracle Documentation: [https://docs.oracle.com](https://docs.oracle.com)
 2. Mode Analytics SQL Window Functions Guide
@@ -224,9 +234,9 @@ References
 7. DataCamp – Window Functions in SQL
 8. BISENGIMANA, Ivan. 'Database Management Systems Class Notes' (Lecture notes). Adventist University of Central Africa.
 9. draw.io – ER Diagram tool
-10. Maniraguha, E. (2025). Database Development with PL/SQL - Lecture 01: Introduction to SQL Command Basics (Recap). AUCA.
+10. Maniraguha, E. (2025). Database Development with PL/SQL - Lecture 01: Introduction to SQL Command Basics (Recap). Adventists University of Central Africa.
 
 
-Academic Integrity Statement
+**Academic Integrity Statement**
 
 All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation. This project upholds AUCA’s integrity guidelines.
