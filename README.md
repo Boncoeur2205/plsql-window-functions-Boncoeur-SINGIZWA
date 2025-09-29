@@ -70,6 +70,8 @@ customer_id-INT (Primary Key)
 name-VARCHAR
 region-VARCHAR
 
+'''sql
+
 CREATE TABLE customers (customer_id INT PRIMARY KEY, name VARCHAR(100), region VARCHAR(50));
 
 INSERT INTO customers (customer_id, name, region) VALUES
@@ -78,6 +80,7 @@ INSERT INTO customers (customer_id, name, region) VALUES
 (1003, 'Esther Uwizeye', 'Musanze'),
 (1004, 'Eric Habimana', 'Kigali'),
 (1005, 'Grace Uwimana', 'Rubavu');
+'''
 
 
 2. products
