@@ -70,7 +70,6 @@ customer_id-INT (Primary Key)
 name-VARCHAR
 region-VARCHAR
 
-'''sql
 
 CREATE TABLE customers (customer_id INT PRIMARY KEY, name VARCHAR(100), region VARCHAR(50));
 
@@ -80,7 +79,8 @@ INSERT INTO customers (customer_id, name, region) VALUES
 (1003, 'Esther Uwizeye', 'Musanze'),
 (1004, 'Eric Habimana', 'Kigali'),
 (1005, 'Grace Uwimana', 'Rubavu');
-'''
+<img width="614" height="249" alt="customers table" src="https://github.com/user-attachments/assets/5a85e039-5218-4710-8c2e-9b22bba668b6" />
+
 
 
 2. products
@@ -97,6 +97,7 @@ INSERT INTO products (product_id, name, category) VALUES
 (2003, 'Cooking Pot Set', 'Home & Kitchen'),
 (2004, 'Office Chair', 'Furniture'),
 (2005, 'Backpack', 'Fashion');
+<img width="616" height="233" alt="products table" src="https://github.com/user-attachments/assets/b5c993bd-87b5-463f-87cf-273b322bfe52" />
 
 
 3. transactions
@@ -122,12 +123,15 @@ INSERT INTO transactions (transaction_id, customer_id, product_id, sale_date, am
 (3010, 1001, 2001, '2024-05-15', 255000),
 (3011, 1005, 2004, '2024-06-01', 175000),
 (3012, 1002, 2002, '2024-06-15', 130000);
+<img width="735" height="285" alt="transactions table" src="https://github.com/user-attachments/assets/b81dc8d9-0aed-43e0-a582-3fd26a4544a6" />
+
 
 
 Relationships
 
 transactions.customer_id → customers.customer_id
 transactions.product_id → products.product_id
+<img width="631" height="291" alt="er-diagram-shopa" src="https://github.com/user-attachments/assets/94e62212-e1da-41a3-bf07-f861277bde94" />
 
 
 SQL Window Functions
@@ -139,7 +143,7 @@ Query: select customer_id, sum(amount) as total_spent,
 rank() over(order by sum(amount) desc) as spending_rank from transactions
 group by customer_id
 order by spending_rank;
-
+<img width="1919" height="1004" alt="Ranking" src="https://github.com/user-attachments/assets/754144c0-ce9d-4543-a197-51e4ba02ee8b" />
 
 
 Interpretation: This query ranks the customers according to their overall amount of spending in all purchases. It assists to pinpoint the most valuable customers of Shopa to enable the business to target the best spenders in terms of loyalty programs, customized offers, or VIP services. The equal spenders are ranked equally.
@@ -150,6 +154,8 @@ Query: select customer_id, sale_date, amount,
 sum(amount) over(partition by customer_id order by sale_date rows between unbounded preceding and current row) as running_total
 from transactions
 order by customer_id, sale_date;
+<img width="1919" height="1009" alt="Aggregate" src="https://github.com/user-attachments/assets/dc808edf-0afc-4361-8c5b-b0df786c9f2d" />
+
 
 Interpretation: This query is a cumulative measure of the number of dollars that each customer has spent in the past. It exposes expenditure habits and trends by individual customer, which is helpful in comprehending loyalty and life-time value, as well as buying trends. It can assist in initiating automatic rewarding on the achievement of spending milestones.
 
@@ -160,6 +166,8 @@ lag(amount) over(partition by customer_id order by sale_date) as previous_amount
 amount - lag(amount) over(partition by customer_id order by sale_date) as difference
 from transactions
 order by customer_id, sale_date;
+<img width="1919" height="1012" alt="Navigation" src="https://github.com/user-attachments/assets/150f453e-1e00-4409-b84d-ed8e849b4016" />
+
 
 Interpretation: This query indicates the quantity of purchase per customer by comparing the purchase made by the customer in the transactions to the one made by the customer just before the purchase. It assists the analytics team to notice when spending drops or rises abruptly, which could be an indication of customer churn, customer satisfaction, or effective promotions. The negative differences indicate the deteriorating engagement.
 
@@ -170,6 +178,8 @@ ntile(4) over(order by sum(amount) desc) as spending_quartile
 from transactions
 group by customer_id
 order by spending_quartile;
+<img width="1919" height="1004" alt="Distribution" src="https://github.com/user-attachments/assets/91d3c440-28a4-483f-9fd3-b9ed31d2efc8" />
+
 
 Interpretation: This query puts each customer in four quartiles on the basis of the total expenditure. The percentage of customers on Quartile 1 is the 25% of the top customers and Quartile 4 covers the lowest spenders. This segmentation will enable Shopa to develop differentiated marketing, including those of exclusive offers and up-sell offers, respectively.
 
@@ -183,6 +193,8 @@ rows between 2 preceding and current row
 ) as moving_avg_3_sales
 from transactions
 order by product_id, sale_date;
+<img width="1919" height="1006" alt="Moving_average" src="https://github.com/user-attachments/assets/d783e781-4f5e-4920-b278-42f247eb2bc1" />
+
 
 Interpretation: This query averages the short-term variation in sales by finding an average of the movement of sales of every product over the past three transactions. It assists in determining the long term sales trends and may be applied to determine the momentum of newly introduced or advertised products. Sudden shifts of moving averages can be due to seasonality or influence of marketing campaigns.
 
