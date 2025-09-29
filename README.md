@@ -224,7 +224,7 @@ References
 7. DataCamp – Window Functions in SQL
 8. BISENGIMANA, Ivan. 'Database Management Systems Class Notes' (Lecture notes). Adventist University of Central Africa.
 9. draw.io – ER Diagram tool
-10. Eric, MANIRAGUHA Lecture Notes from INSY 8311
+10. Maniraguha, E. (2025). Database Development with PL/SQL - Lecture 01: Introduction to SQL Command Basics (Recap). AUCA.
 
 
 Academic Integrity Statement
